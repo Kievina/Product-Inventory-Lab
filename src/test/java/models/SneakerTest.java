@@ -144,7 +144,7 @@ public class SneakerTest {
     @Test
     public void setQtyTest() {
         int newQtyExpected = 10;
-        testSneaker.setId(newQtyExpected);
+        testSneaker.setQty(newQtyExpected);
         int actualQty = testSneaker.getQty();
 
         Assert.assertEquals(newQtyExpected, actualQty);
