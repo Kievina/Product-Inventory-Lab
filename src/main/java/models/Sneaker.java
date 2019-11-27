@@ -74,4 +74,17 @@ public class Sneaker {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "Sneaker{" +
+                "id=" + this.id +
+                ", name='" + this.name + '\'' +
+                ", brand='" + this.brand + '\'' +
+                ", sport='" + this.sport + '\'' +
+                ", size=" + this.size +
+                ", qty=" + this.qty +
+                ", price=" + this.price +
+                '}';
+    }
 }
