@@ -8,6 +8,15 @@ public class DogFood {
     private int qty;
     private float price;
 
+    public DogFood(int id, String name, String brand, float weight, int qty, float price) {
+        this.id = id;
+        this.name = name;
+        this.brand = brand;
+        this.weight = weight;
+        this.qty = qty;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
