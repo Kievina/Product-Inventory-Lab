@@ -7,7 +7,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class SneakerServiceTest {
@@ -34,7 +33,7 @@ public class SneakerServiceTest {
 
     @After
     public void tearDown() {
-//        sneakerInventory.clear();
+
     }
 
     @Test
@@ -98,6 +97,5 @@ public class SneakerServiceTest {
     public void deleteTest() {
         boolean deleted = ss.delete(1);
         Assert.assertTrue(deleted);
-
     }
 }

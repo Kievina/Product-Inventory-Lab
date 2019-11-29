@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SneakerService {
-    private static int nextId = 1;
+//    private static int nextId = 1;
+private int nextId = 1;
+
     private List<Sneaker> inventory = new ArrayList<>();
 
     public SneakerService() {
@@ -22,11 +24,12 @@ public class SneakerService {
     //read
     public Sneaker findSneaker(int id) {
         // should take an int and return an object with that id, if exists
+        Sneaker result = null;
         for (Sneaker sneaker : inventory) {
             if (sneaker.getId() == id)
-                return sneaker;
+                result = sneaker;
         }
-        return null;
+        return result;
 //        return inventory.stream()
 //                .filter(sneaker -> sneaker.getId() == id)
 //                .findFirst().orElse(null);
@@ -35,18 +38,27 @@ public class SneakerService {
     //read all
     public Sneaker[] findAll() {
         // should return a basic array copy of the ArrayList
-        return inventory.toArray(new Sneaker[inventory.size()]);
+        return inventory.toArray(new Sneaker[0]);
     }
 
     //delete
     public boolean delete(int id) {
         // should remove the object with this id from the ArrayList if exits and return true.
         // Otherwise return false
+        boolean result = false;
         if (inventory.contains(findSneaker(id))) {
             inventory.remove(findSneaker(id));
-            return true;
+            result = true;
         } else
-            return false;
+            result = false;
+        return result;
     }
 
+    public int getNextId() {
+        return nextId;
+    }
+
+    public void setNextId(int nextId) {
+        this.nextId = nextId;
+    }
 }
