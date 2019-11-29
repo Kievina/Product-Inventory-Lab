@@ -3,7 +3,6 @@ package services;
 import models.Sneaker;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class SneakerService {

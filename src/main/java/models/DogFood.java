@@ -8,6 +8,9 @@ public class DogFood {
     private int qty;
     private float price;
 
+    public DogFood() {
+    }
+
     public DogFood(int id, String name, String brand, float weight, int qty, float price) {
         this.id = id;
         this.name = name;

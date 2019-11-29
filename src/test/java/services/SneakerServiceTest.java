@@ -73,14 +73,16 @@ public class SneakerServiceTest {
 
     @Test
     public void findSneakerTest() {
-//        SneakerService ss = new SneakerService();
-        Sneaker expectedSneaker = new Sneaker(1, "Abby J", "Adidas", "Tennis", 8f, 22, 54.99f);
-        Sneaker actualSneaker1 = ss.findSneaker(10);
-//        Sneaker actualSneaker2 = ss.findSneaker(9);
+        Sneaker expectedSneaker1 = sneakerInventory.get(0);
+        Sneaker expectedSneaker2 = sneakerInventory.get(1);
+
+        Sneaker actualSneaker1 = ss.findSneaker(1);
+        Sneaker actualSneaker2 = ss.findSneaker(2);
 
 
-        Assert.assertEquals(expectedSneaker, actualSneaker1);
-//        Assert.assertNull(actualSneaker2);
+        Assert.assertEquals(expectedSneaker1, actualSneaker1);
+        Assert.assertEquals(expectedSneaker2, actualSneaker2);
+
 
     }
 
@@ -94,9 +96,8 @@ public class SneakerServiceTest {
 
     @Test
     public void deleteTest() {
-        Sneaker deletedSneaker = ss.findSneaker(1);
-        ss.delete(1);
-        Assert.assertFalse(sneakerInventory.contains(deletedSneaker));
+        boolean deleted = ss.delete(1);
+        Assert.assertTrue(deleted);
 
     }
 }
